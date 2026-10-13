@@ -40,9 +40,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Applies the stored or system theme before first paint to avoid a flash, and
+// Applies the visitor's stored theme (light unless they chose dark) before first
+// paint to avoid a flash, and
 // marks the document as script-enabled for scroll-reveal styles.
-const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}document.documentElement.dataset.theme=t}catch(e){}document.documentElement.dataset.js="1"})()`;
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(t!=="dark"){t="light"}document.documentElement.dataset.theme=t}catch(e){}document.documentElement.dataset.js="1"})()`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

@@ -19,7 +19,7 @@ The project started from another developer's portfolio. In October 2026 the cont
 ## Design
 
 - The visual design was rebuilt in October 2026, taking its direction from a reference site the owner chose: warm paper background, bold sans headings with one italic serif phrase, pill buttons, rounded cards, and a green accent. All styles live in `src/app/globals.css`.
-- Light and dark themes are defined as CSS variables at the top of `globals.css`. An inline script in `src/app/layout.tsx` applies the stored choice, or the system preference, before first paint; `src/components/theme-toggle.tsx` switches and stores it in `localStorage`.
+- Light and dark themes are defined as CSS variables at the top of `globals.css`. An inline script in `src/app/layout.tsx` applies the stored choice before first paint (light by default, whatever the system setting); `src/components/theme-toggle.tsx` switches and stores it in `localStorage`.
 - The logo is an "aks" monogram (Abdul Khaliq Sediqi) beside the full name (`Wordmark` in `src/components/site.tsx`); the favicon uses the same monogram.
 - The home hero is a slideshow (`src/components/hero-slider.tsx`): five headlines, each with a sentence and a row of tools. It advances every six seconds, pauses on hover or focus, and does not auto-advance for visitors who prefer reduced motion. The page's real `h1` is a visually hidden static line.
 - Sections reveal on scroll and the "What I do" and experience cards stack while scrolling (`src/components/reveal-observer.tsx` and the Motion block in `globals.css`).
