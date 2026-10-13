@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Arrow, Contact } from "@/components/site";
 import { ProjectList } from "@/components/project-list";
 import { HeroSlider } from "@/components/hero-slider";
+import { TeamsSwiper } from "@/components/teams-swiper";
 import { ExperienceSection, SkillsSection } from "@/components/profile-sections";
 import { projects, whatsapp } from "@/data/projects";
 import { experience } from "@/data/profile";
@@ -118,21 +119,7 @@ export default function Home() {
       </section>
 
       <div className="shell">
-        <ul className="teams" aria-label="Teams I have worked with">
-          <li className="eyebrow">Teams I’ve worked with</li>
-          {organizations.map((item) => {
-            const logo = logos[item.organization];
-            return (
-              <li key={item.organization} className={logo ? "team team-logo" : "team"}>
-                {logo ? (
-                  <Image src={logo.src} alt={item.organization} width={logo.width} height={logo.height} />
-                ) : (
-                  item.organization
-                )}
-              </li>
-            );
-          })}
-        </ul>
+        <TeamsSwiper teams={organizations.map((item) => ({ name: item.organization, logo: logos[item.organization] }))} />
       </div>
 
       <section id="approach" className="shell section-space" aria-labelledby="offers-title">
