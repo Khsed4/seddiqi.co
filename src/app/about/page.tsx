@@ -7,6 +7,7 @@ import { whatsapp } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "About",
+  alternates: { canonical: "/about" },
   description:
     "Meet Abdulkhaliq Sediqi, a senior software engineer and team lead working with Laravel, Node.js, NestJS, React, and microservices.",
 };

@@ -28,6 +28,12 @@ The project started from another developer's portfolio. In October 2026 the cont
 
 - The "Teams I've worked with" strip shows official logos where one could be found on the company's own website (`public/logos/`: Raha Ertebat, using the Rahanet logo as the owner confirmed they are the same company, PomTech ICT Solutions, and Unique Group). Other employers are shown by name. To add a logo, save it in `public/logos/` and add an entry to the `logos` map in `src/app/page.tsx`.
 
+## SEO
+
+- The public address is set once in `src/lib/site.ts` (`https://seddiqi.co`). The root layout uses it for `metadataBase`, canonical URLs, Open Graph tags, and a JSON-LD block describing the site and the person.
+- `src/app/robots.ts` and `src/app/sitemap.ts` generate `/robots.txt` and `/sitemap.xml`; the sitemap lists every page and project. `src/app/opengraph-image.tsx` generates the social preview card.
+- The hero portrait is shown in black and white, with colour on hover.
+
 ## Résumé PDF
 
 `/resume` uses the same profile and project sources and has print styles. `public/abdulkhaliq-sediqi-resume.pdf` is generated from it. After changing profile content, run `npm run build && npm start`, then `npm run resume:pdf` in another terminal (headless Firefox, no extra dependencies), and review the PDF before publishing.

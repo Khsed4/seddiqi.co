@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { projects } from "@/data/projects";
 import { Arrow, Contact } from "@/components/site";
 import { caseStudies } from "@/data/case-studies";
+import { socialImage } from "@/lib/site";
 
 export function generateStaticParams() {
   return projects.map(({ slug }) => ({ slug }));
@@ -17,10 +18,13 @@ export async function generateMetadata({
   const project = projects.find((item) => item.slug === slug);
   if (!project) notFound();
   return {
-    title: project.name,
+    title: `${project.name} — ${project.role}`,
     description: project.summary,
+    alternates: { canonical: `/work/${project.slug}` },
     openGraph: {
       title: `${project.name} — Abdulkhaliq Sediqi`,
+      url: `/work/${project.slug}`,
+      images: [socialImage],
       description: project.summary,
     },
   };

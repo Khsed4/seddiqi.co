@@ -2,12 +2,16 @@ import type { Metadata } from "next";
 import { Arrow, Contact } from "@/components/site";
 import { ProjectList } from "@/components/project-list";
 import { github, projects } from "@/data/projects";
+import { socialImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Work & Projects",
+  alternates: { canonical: "/work" },
   description: "Projects Abdulkhaliq Sediqi has worked on, with the stack used on each: streaming platforms, web products, open-source work, and company websites.",
   openGraph: {
     title: "Work & Projects — Abdulkhaliq Sediqi",
+    url: "/work",
+    images: [socialImage],
     description: "Projects, contributions, and the stack behind each one.",
   },
 };

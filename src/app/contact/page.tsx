@@ -7,12 +7,16 @@ import { ContactForm } from "@/components/contact-form";
 import { ContactFAQ } from "@/components/contact-faq";
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { email, github, phone, whatsapp } from "@/data/projects";
+import { socialImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
+  alternates: { canonical: "/contact" },
   description: "Contact Abdulkhaliq Sediqi about software engineering roles, web applications, APIs, and collaboration.",
   openGraph: {
     title: "Contact — Abdulkhaliq Sediqi",
+    url: "/contact",
+    images: [socialImage],
     description: "Have a project or opportunity in mind? Let’s start a conversation.",
   },
 };

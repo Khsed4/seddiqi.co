@@ -393,6 +393,9 @@ textarea:focus-visible {
 .hero-photo img {
   width: 100%;
   height: auto;
+  /* Black and white so the photo sits calmly beside the type; colour returns on hover. */
+  filter: grayscale(1) contrast(1.05);
+  transition: filter 0.6s ease;
   border-radius: 190px 190px 28px 28px;
   background: var(--panel);
 }
@@ -402,6 +405,9 @@ textarea:focus-visible {
 }
 :root[data-theme="dark"] .hero-photo .only-dark {
   display: block;
+}
+.hero-photo:hover img {
+  filter: none;
 }
 .hero-photo figcaption {
   position: absolute;

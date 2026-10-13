@@ -6,6 +6,7 @@ import { email, github, phone, projects, whatsapp } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: "Résumé",
+  alternates: { canonical: "/resume" },
   description: "Professional experience, selected projects, and technical skills of Abdulkhaliq Sediqi, senior software engineer.",
 };
 
